@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+section {
+    display: flex;
+    height: 100vh;
+    background: linear-gradient(45deg, #e138cb, #ffb1e0);
+    align-items: center;
+    justify-content: center;
+}
+
+.circle {
+    position: absolute;
+    border-radius: 50%;
+}
+
+#circle-one {
+    width: 1000px;
+    height: 1000px;
+    background: linear-gradient(45deg, #ff5fce, transparent);
+    top: -400px;
+    left: -400px;
+    box-shadow: 0 0 120px #ff73e8;
+}
+
+#circle-two {
+    width: 1000px;
+    height: 1000px;
+    background: linear-gradient(45deg, #ff0b63, transparent);
+    bottom: -400px;
+    right: -400px;
+    box-shadow: 0 0 100px #ff65e5;
+}
+
+#circle-three {
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(45deg, #de76ff, transparent);
+    top: 10%;
+    right: 40%;
+    box-shadow: 0 0 100px #ef8df1;
+}
+
+#circle-four {
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(45deg, #b056ff, transparent);
+    bottom: 10%;
+    left: 50%;
+    box-shadow: -30px 30px 100px #cb56f2;
+}
+
+#menu {
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.18);
+    border-radius: 40px;
+    padding: 20px 0;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    z-index: 9;
+}
+
+#arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10px;
+    height: 49px;
+    background-color: rgba(255, 255, 255, 0.18);
+	padding: 0;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 0 18px 18px 0;
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translateY(calc(-49px / 2));
+    cursor: pointer;
+    outline: none;
+}
+
+#arrow i {
+	font-size: 8px;
+    transition: all 0.8s;
+}
+
+#arrow i.rotate {
+    transform: rotate(180deg);
+}
+
+ul {
+    padding: 0;
+    width: 80px;
+    height: 100%;
+    overflow: hidden;
+    transition: all 0.8s;
+}
+
+ul.active {
+    width: 200px;
+}
+
+li {
+    list-style: none;
+}
+
+li a {
+    display: inline-block;
+    width: 100%;
+    padding: 15px 0;
+    padding-left: 0;
+    color: #3e3e3e;
+    text-decoration: none;
+    font-family: Roboto;
+    white-space: nowrap;
+}
+
+li a:hover {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.3), transparent);
+}
+
+.icon {
+    display: inline-block;
+    width: 80px;
+    text-align: center;
+}
+
+.text {
+    position: relative;
+    transition: 1s;
+    right: calc(170px * var(--i));
+}
+
+.text.show {
+    right: 0;
+}

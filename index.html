@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+        <link rel="stylesheet" href="./style.css" />
+    </head>
+    <body>
+        <section>
+            <span id="circle-one" class="circle"></span>
+            <span id="circle-two" class="circle"></span>
+            <span id="circle-three" class="circle"></span>
+            <span id="circle-four" class="circle"></span>
+            <div id="menu">
+                <button id="arrow"><i class="fas fa-chevron-right"></i></button>
+                <ul>
+                    <li>
+                        <a href="#">
+                            <span class="icon"><i class="fas fa-home"></i></span>
+                            <span class="text" style="--i:1">Home</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="icon"><i class="fas fa-file"></i></span>
+                            <span class="text" style="--i:2">Resume</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="icon"><i class="fas fa-question"></i></span>
+                            <span class="text" style="--i:3">Help</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="icon"><i class="fas fa-info"></i></span>
+                            <span class="text" style="--i:4">About Us</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="icon"><i class="fas fa-users"></i></span>
+                            <span class="text" style="--i:5">Users</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="icon"><i class="fas fa-key"></i></span>
+                            <span class="text" style="--i:6">Password</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="icon"><i class="fas fa-sign-out-alt"></i></span>
+                            <span class="text" style="--i:7">Exit</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <script>
+            var ul = document.getElementsByTagName('ul')[0];
+            var arrow = document.querySelector('#arrow i');
+            document.getElementById('arrow').addEventListener('click', function(e) {
+                if (ul.classList.contains('active')) {
+                    for (i of document.getElementsByClassName('text')) {
+                        i.classList.toggle('show');
+                    }
+                    setTimeout(function() {
+                        ul.classList.toggle('active');
+                    }, 200);
+                } else {
+                    ul.classList.toggle('active');
+                    setTimeout(function() {
+                        for (i of document.getElementsByClassName('text')) {
+                            i.classList.toggle('show');
+                        }
+                    }, 200);
+                }
+                arrow.classList.toggle('rotate');
+            });
+        </script>
+    </body>
+</html>
